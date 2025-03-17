@@ -1,0 +1,96 @@
+body {
+
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Ensure the body and container are properly aligned */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Make sure the container is centered and fits the screen */
+.container {
+  max-width: 100%;
+  padding-left: 20px; /* Add padding so content isn't stuck to the left */
+  padding-right: 20px;
+  margin: 0 auto; /* Center the container */
+}
+
+/* Ensure columns and rows adjust properly */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Fix alignment on smaller screens */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .row {
+    flex-direction: column; /* Stack columns on smaller screens */
+    align-items: center;
+  }
+
+  .col {
+    width: 100%;
+    text-align: center; /* Center content inside */
+  }
+}
+
+/* Make sure content does not overflow */
+body {
+  overflow-x: hidden;
+}
+
+/* Adjust container width */
+.container {
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .btn {
+    width: 100%; /* Buttons take full width on small screens */
+  }
+
+  .user-photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .progress {
+    height: 10px; /* Make progress bars thinner on small screens */
+  }
+
+  .row {
+    flex-direction: column; /* Stack columns on top of each other */
+  }
+
+  .col {
+    width: 100%; /* Make columns take full width */
+    margin-bottom: 20px;
+  }
+}

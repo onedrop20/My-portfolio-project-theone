@@ -1,0 +1,19 @@
+social-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.2);
+    color: #f39c12; /* Light orange/gold hover color */
+  }
+
+  /* footer */
+.collab {
+    font-size: -20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .myid {
+    font-size: -40px;
+  }
