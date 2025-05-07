@@ -1,0 +1,516 @@
+/* for backbutton arrow stuff so this is important*/
+
+/* important backbone stuffs ends here bitch*/
+.project-details h6 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #343a40;
+  margin: 1rem 0 0.5rem;
+  letter-spacing: 0.02em;
+  border-left: 4px solid #007bff;
+  padding-left: 0.75rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-details h6 {
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+  }
+}
+
+/* Portfolio Container */
+.portfolio {
+  padding: 60px 0; /* Keep the vertical space */
+  margin: 60px 0; /* Match your my-5 */
+  background: linear-gradient(135deg, #f4f7f4, #e6ece6);/* Subtle green fade */
+  position: relative; /* For tricks */
+  overflow: hidden; /* Clean edges */
+  width: 100%;
+  max-width: 100%;
+}
+
+
+  
+  /* Cool Background Accent */
+  .portfolio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(39, 174, 96, 0.1), transparent 70%); /* Rasta green glow */
+    animation: pulseGlow 10s infinite; /* Slow pulse */
+    z-index: -1; /* Behind everything */
+  }
+  
+  @keyframes pulseGlow {
+    0% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 0.5; }
+  }
+  
+  /* Title Styling */
+  .heading-shadow {
+    font-size: 2.5rem; /* Your fs-2 vibe */
+    color: #1a3c34; /* Deep teal */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0 0 15px rgba(39, 174, 96, 0.5); /* Green halo */
+    position: relative;
+    padding-bottom: 20px;
+    animation: titleFade 1s ease-in-out; /* Fade in */
+  }
+  
+  .heading-shadow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, #ffcc00, #e74c3c); /* Rasta yellow to red */
+    border-radius: 3px;
+    transition: width 0.4s ease;
+  }
+  
+  .heading-shadow:hover::after {
+    width: 120px; /* Stretch on hover */
+  }
+  
+  @keyframes titleFade {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Extra Projects Title */
+  .extra-projects h2 {
+    font-size: 2rem;
+    color: #27ae60; /* Rasta green */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 40px 0 20px; /* Your 2.93vw spacing */
+    position: relative;
+    text-align: center;
+  }
+  
+  .extra-projects h2::before {
+    content: '✨'; /* Sparkle emoji */
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #ffcc00; /* Yellow spark */
+    animation: sparkle 2s infinite; /* Twinkle */
+  }
+  
+  .extra-projects h2::after {
+    content: '✨';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #ffcc00;
+    animation: sparkle 2s infinite 0.5s; /* Offset twinkle */
+  }
+  
+  @keyframes sparkle {
+    0% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0.5; transform: scale(1); }
+  }
+  
+  /* Back Button */
+  .btn-primary {
+    background: #e74c3c; /* Rasta red */
+    border: none;
+    padding: 12px 35px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin: 40px auto 0; /* Centered like yours */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 204, 0, 0.3); /* Yellow shine */
+    transition: left 0.4s ease;
+  }
+  
+  .btn-primary:hover::before {
+    left: 0; /* Shine slides in */
+  }
+  
+  .btn-primary:hover {
+    background: #ffcc00; /* Rasta yellow */
+    color: #1a3c34; /* Teal text */
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5); /* Glow */
+  }
+
+  /* Leave your original card/filter styles untouched */
+  .extra-projects {
+    margin-top: 2.93vw;
+    text-align: center;
+    
+  }
+  
+  .projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.46vw;
+  }
+  
+  .project-card {
+    width: 100%;
+    
+    max-width: 400px;
+    background: #f9f9f9;
+    border-radius: 0.59vw;
+    padding: 1.1vw;
+    text-align: center;
+    box-shadow: 0 0.29vw 0.44vw rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .project-card h3 {
+    font-size: 1.2rem;
+    margin: 0.73vw 0;
+  }
+  
+  .project-card p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0vw;
+    margin-bottom: 2vh;
+    padding: 1vh;
+  }
+  
+  .filters span {
+    cursor: pointer;
+    padding: 1.2vh 2vw;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .filters span:hover,
+  .filters span.fw-bold {
+    font-weight: bold;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+  }
+  
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0vw;
+    padding: 2vh 0;
+  }
+  
+  .grid-item {
+    width: clamp(100px, 16vw, 150px);
+    transition: transform 0.3s ease;
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+  }
+
+ 
+
+
+  
+  
+  /* Mobile Adjustments */
+ /* Mobile screens - full width cards */
+@media (max-width: 768px) {
+  .portfolio {
+    padding: 40px 0;
+    margin: 40px 0;
+    width: 100% !important;
+    min-width: 100%;
+  }
+   
+
+  
+
+
+  .heading-shadow {
+    font-size: 2rem;
+  }
+
+  .extra-projects h2 {
+    font-size: 1.8rem;
+  }
+
+  .btn-primary {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px; /* spacing between cards */
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .filters {
+    justify-content: space-between;
+    padding: 1vh 5vw;
+  }
+
+  .grid-item {
+    width: clamp(60px, 80vw, 120px) !important; /* or set width: 100% if you want grid items full too */
+  }
+}
+
+
+@media (max-width: 920px) {
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.project-details {
+  margin-top: 10px;
+  padding: 0 10px;
+  background: #f8f9fa;
+  border: 1px solid #343a40;
+  border-radius: 5px;
+  text-align: left;
+  max-height: 100%;
+  opacity: 2;
+  visibility: auto;
+  font-size: 10px;
+  transition: max-height 0.4s ease, opacity 0.4s ease, visibility 0.4s ease, padding 0.4s ease;
+}
+.project-details[style*="block"] {
+  max-height: 500px; /* Covers most content, adjust if needed */
+  padding: 10px;
+  opacity: 1;
+  visibility: visible;
+}
+.project-details p {
+  font-size: 0.9rem !important;
+  color: #343a40;
+  margin-bottom: 10px;
+}
+.project-details .btn-outline-dark {
+  font-size: 0.9rem;
+  padding: 5px 10px;
+}
+
+.time-travel-stuff {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #495057;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/* latest projects stuffs*/
+.latest-projects-intro {
+  font-family: 'Arial', sans-serif;
+  color: #343a40;
+  max-width: 900px;
+  margin: 0 auto 2.5rem auto;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.latest-projects-intro h3,
+.latest-projects-intro h4,
+.latest-projects-intro h5,
+.latest-projects-intro p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.7s ease forwards;
+}
+
+.latest-projects-intro h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #343a40;
+  letter-spacing: 0.03em;
+  border-bottom: 2px solid transparent;
+  background: linear-gradient(to right, #007bff, #00d4ff);
+  -webkit-background-clip: border;
+  background-clip: border;
+  padding-bottom: 0.3rem;
+  animation-delay: 0.1s;
+}
+
+.latest-projects-intro h3:hover {
+  color: #007bff;
+  text-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.latest-projects-intro h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.8rem;
+  color: #343a40;
+  animation-delay: 0.3s;
+}
+
+.latest-projects-intro h4:hover {
+  color: #007bff;
+  text-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.latest-projects-intro h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 1.5rem 0 0.8rem;
+  color: #495057;
+  font-style: italic;
+  animation-delay: 0.5s;
+}
+
+.latest-projects-intro h5:hover {
+  color: #007bff;
+  text-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.latest-projects-intro p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #343a40;
+}
+
+.latest-projects-intro p:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.latest-projects-intro p:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.latest-projects-intro p:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.latest-projects-intro strong {
+  color: #007bff;
+  font-weight: 700;
+}
+
+.latest-projects-intro em {
+  color: #495057;
+  font-style: italic;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .latest-projects-intro {
+    padding: 1rem 0.5rem;
+  }
+  .latest-projects-intro h3 {
+    font-size: 1.5rem;
+  }
+  .latest-projects-intro h4 {
+    font-size: 1.2rem;
+  }
+  .latest-projects-intro h5 {
+    font-size: 1rem;
+  }
+  .latest-projects-intro p {
+    font-size: 1rem;
+  }
+}
+/* and ending */

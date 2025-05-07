@@ -1,90 +1,215 @@
 /* Navbar General */
+/* Navbar General */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background: #080808;
+  padding: 20px 15px;
+  background: #080808 !important;
   color: white;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000000;
+  transition: padding 0.3s ease, background 0.3s ease;
+}
+
+/* Shrink on scroll */
+nav.scrolled {
+  padding: 15px 30px;
+  background: rgba(8, 8, 8, 0.9);
 }
 
 /* Logo */
 .logo {
   width: 50px;
   height: auto;
+  transition: transform 0.5s ease;
+  top: -10px;
+  position: relative;
 }
 
+nav.scrolled .logo {
+  transform: scale(0.9);
+}
+
+/* Hamburger and Close Icons */
+.fa-bars, .fa-xmark {
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.fa-bars {
+  color: white;
+}
+
+.fa-xmark {
+  color: red;
+}
+
+.fa-bars:hover, .fa-xmark:hover {
+  transform: scale(1.2);
+}
+
+/* Side Menu */
 .sidemenu {
   position: fixed;
   top: 0;
-  right: -250px; /* Hidden by default */
+  right: -250px;
   width: 250px;
   height: 100vh;
-  background: #374255;
+  background: #374255 !important;
   transition: right 0.3s ease-in-out;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  box-shadow: -5px 0 10px rgba(0,0,0,0.3);
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .sidemenu.open {
-  right: 0; /* Slide in when open */
-}
-
-.fa-bars {
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-  display: block;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-}
-
-.fa-xmark {
-  font-size: 24px;
-  cursor: pointer;
-  color: red;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  display: block;
+  right: 0;
+  font-size: 200px;
 }
 
 .sidemenu li {
   list-style: none;
   margin: 15px 0;
-  width: 100px;
+  width: 100%;
 }
 
 .sidemenu li a {
   text-decoration: none;
   color: white;
-  font-size: 10px;
-  display: block;
-  transition: 0.3s;
-  border-radius: 5px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  transition: color 0.3s ease, background 0.3s ease;
+  position: relative;
 }
 
+/* Glow effect on hover */
 .sidemenu li a:hover {
-  color: rgba(255, 255, 255, 0.322);
-}
-.sidemenu li a:active {
-  color: rgba(255, 255, 255, 0.048) !important;
-  font-weight: bold;
-  border-radius: 5px;
+  color: #f39c12;
+  background: rgba(255, 255, 255, 0.1);
 }
 
+.sidemenu li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f39c12;
+  transition: width 0.3s ease;
+}
+
+.sidemenu li a:hover::after {
+  width: 100%;
+}
+
+/* Active link */
+.sidemenu li a.active {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+/* Icons in links */
 .sidemenu li a i {
   font-size: 20px;
+  margin-right: 10px;
   color: white;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
 .sidemenu li a:hover i {
   color: #f39c12;
 }
 
+/* Dark/Light Toggle */
+.mode-toggle button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.mode-toggle button:hover {
+  transform: scale(1.2);
+}
+
+.mode-toggle button i {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.mode-toggle button:hover i {
+  color: #f39c12;
+}
+
+/* Dark/Light Mode Styles */
+body.light-mode {
+  --bg-color: #ffffff;
+  --text-color: #080808;
+  --nav-bg: #080808;
+  --menu-bg: #374255;
+}
+
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --nav-bg: #080808;
+  --menu-bg: #374255;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+nav {
+  background: var(--nav-bg);
+}
+
+.sidemenu {
+  background: var(--menu-bg);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sidemenu {
+    width: 250px;
+  }
+  .overlay {
+    right: 250px !important;
+  }
+  .sidemenu li a {
+    font-size: 30px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 200px;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  cursor: pointer;
+}
+@media (min-width: 769px) {
+  .overlay {
+    right: 250px;
+  }
+}

@@ -1,0 +1,538 @@
+.service-wrapp {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    text-align: center; /* Centers text elements */
+    min-height: 100vh; /* Ensures it takes the full height of the screen */
+    padding: 20px;
+    margin-top: 6rem;
+  }
+  
+  .services-container {
+    width: 100%;
+    max-width: 900px;
+    font-size: 2.5rem;
+  color: #1a3c34 !important;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding-bottom: 15px;
+  }
+  .services-container::after {
+    content: '';
+    position: absolute;
+    bottom: 16px;
+    left: 42%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ffcc00, #e74c3c);
+    transition: width 0.3s ease;
+  }
+  .services-container:hover::after {
+    width: 120px;
+    transition: width 0.3s ease;
+  }
+  
+  
+  
+  @media only screen and (min-width: 1024px) {
+    .services-container {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+
+/* first row */
+/* src/styles.css (or wherever this lives) */
+
+
+  /* second row */
+  .fade-container {
+    position: fixed;
+    top: 80px; /* Top edge, full commitment */
+    left: 0;
+    width: 100%; /* Full stretch */
+    height: 120px; /* Slightly taller for presence */
+    background: linear-gradient(90deg, #1a3c34, #27ae60); /* Teal to Rasta green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* White text */
+    z-index: 900; /* Stays above most */
+    overflow: hidden; /* Clean edges */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle depth */
+  }
+
+  @media (min-width: 1018px) {
+    .fade-container {
+      height: 90px;
+    }
+  }
+  
+  /* Inner Fade Wrapper */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Start below */
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Smooth base */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Space between title and text */
+    width: 90%; /* Slight margin */
+    text-align: center;
+  }
+  
+  /* Active State */
+  .fade-in-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Out State with Twist */
+  .fade-out-active {
+    opacity: 0;
+    transform: translateY(-20px) rotateX(10deg); /* Flip up and out */
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  }
+  
+  /* Title Styling */
+  .fade-title h6 {
+    font-size: 1.5rem; /* Bold and big */
+    font-weight: 700;
+    color: #ffcc00; /* Rasta yellow */
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Glow effect */
+    animation: titlePulse 2s infinite; /* Subtle pulse */
+  }
+  
+  /* Text Styling */
+  .fade-in p {
+    font-size: 1.1rem; /* Readable */
+    font-weight: 400;
+    color: #fff;
+    margin: 0;
+    max-width: 600px; /* Keep it tidy */
+    line-height: 1.4;
+  }
+  
+  /* Pulse Animation for Title */
+  @keyframes titlePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Background Slide Effect */
+  .fade-container::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(231, 76, 60, 0.2); /* Rasta red sheen */
+    animation: slideSheen 8s infinite; /* Slides across */
+    z-index: -1; /* Behind content */
+  }
+  
+  @keyframes slideSheen {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(200%); }
+    100% { transform: translateX(0); }
+  }
+  
+  /* Hover Pause (Desktop) */
+  .fade-container:hover .fade-in {
+    animation-play-state: paused; /* Pauses fade if hovering */
+  }
+  
+  .fade-container:hover .fade-title h6 {
+    animation-play-state: paused; /* Stops pulse */
+  }
+  
+  /* Mobile Touch */
+  
+  
+  /* Extra Flair: Content Swap Animation */
+  .fade-in-active {
+    animation: contentSwap 0.6s ease-in-out; /* Smooth entry */
+  }
+  
+  @keyframes contentSwap {
+    0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  /* third row */
+  .accordion-section {
+    max-width: 1200px; /* Wide but controlled */
+    margin: 60px auto; /* Centered, less awkward than 150px/350px */
+    padding: 0 20px; /* Breathing room */
+    position: relative; /* For future accents */
+  }
+  
+  /* Accordion Container */
+  .accordion {
+    width: 100%;
+    max-width: 700px; /* Wider than 500px for better flow */
+    margin: 0 auto; /* Centered */
+    background: #fff; /* Clean white base */
+    border-radius: 10px; /* Soft edges */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Deep shadow */
+    overflow: hidden; /* Clean cuts */
+  }
+  
+  /* Accordion Item */
+  .accordion-item {
+    border-bottom: 2px solid #e0e0e0; /* Subtle divider */
+    transition: all 0.3s ease; /* Smooth vibes */
+  }
+  
+  .accordion-item.active {
+    background: linear-gradient(135deg, #f9f9f9, #e6ece6); /* Light gradient when open */
+  }
+  
+  /* Button Styling */
+  .accordion-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px; /* More clickable space */
+    font-size: 1.4rem; /* Bold text */
+    font-weight: 600; /* Chunky */
+    color: #1a3c34; /* Deep teal */
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    position: relative; /* For icon */
+    display: flex;
+    justify-content: space-between; /* Space for arrow */
+    align-items: center;
+    transition: color 0.3s ease, background 0.3s ease;
+  }
+  
+  /* Arrow Icon */
+  .accordion-btn::after {
+    content: "↓"; /* Down arrow */
+    font-size: 1.2rem;
+    color: #27ae60; /* Rasta green */
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion-item.active .accordion-btn::after {
+    transform: rotate(180deg); /* Up arrow when open */
+  }
+  
+  /* Hover Effect */
+  .accordion-btn:hover {
+    color: #e74c3c; /* Rasta red */
+    background: rgba(39, 174, 96, 0.1); /* Light green tint */
+  }
+  
+  /* Content Styling */
+  .accordion-content {
+    overflow: hidden;
+    max-height: 0; /* Controlled by JSX */
+    padding: 0 20px; /* Start flush */
+    transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out; /* Smooth slide */
+    background: #fff; /* White backdrop */
+  }
+  
+  .accordion-item.active .accordion-content {
+    padding: 20px; /* Expand with content */
+  }
+  
+  /* Paragraphs Inside */
+  .accordion-content p {
+    font-size: 1.1rem; /* Readable */
+    color: #333; /* Soft dark */
+    line-height: 1.6; /* Airy */
+    margin: 0;
+    opacity: 0; /* Fade in setup */
+    transform: translateY(10px); /* Slide up setup */
+    animation: contentFade 0.5s ease forwards; /* Fade + slide */
+  }
+  
+  @keyframes contentFade {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Rasta Accent Bar */
+  .accordion::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #27ae60, #ffcc00, #e74c3c); /* Green, yellow, red */
+    z-index: 1;
+  }
+  
+  /* Hover Glow on Item */
+  .accordion-item:hover {
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2); /* Green glow */
+  }
+  
+  /* Mobile Responsiveness */
+  
+    
+    
+  
+ .first-row {
+  padding-top: 100px;
+ }
+ 
+  /* reviews section */
+ .revs {
+  margin-top: 150px;
+ }
+
+ /* written content */
+  .em {
+    font-style: italic;
+  }
+
+  .written-contents {
+    max-width: 1000px; /* Keeps it readable, not too wide */
+    margin: 40px auto; /* Centered with breathing room */
+    padding: 30px; /* Inner space */
+    background: #f9f9f9; /* Light gray base */
+    border-radius: 15px; /* Soft corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle lift */
+    font-family: 'Arial', sans-serif; /* Clean font */
+    position: relative; /* For some flair */
+    overflow: hidden; /* Clean edges */
+  }
+  
+  /* Headings - Bold and Punchy */
+  .written-contents h6 {
+    font-size: 1.6rem; /* Big but not crazy */
+    color: #1a3c34; /* Deep teal vibe */
+    margin: 30px 0 15px; /* Space it out */
+    position: relative;
+    padding-bottom: 10px; /* Room for underline */
+    font-weight: 700; /* Heavyweight */
+    text-transform: uppercase; /* Sharp look */
+  }
+  
+  /* Fancy Underline Animation */
+  .written-contents h6::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px; /* Short start */
+    height: 3px;
+    background: linear-gradient(90deg, #ffcc00, #e74c3c); /* Rasta yellow to red */
+    transition: width 0.4s ease-in-out; /* Smooth stretch */
+  }
+  
+  .written-contents h6:hover::after {
+    width: 100%; /* Full stretch on hover */
+  }
+  
+  /* Paragraphs - Clean and Crisp */
+  .written-contents p {
+    font-size: 1.1rem; /* Readable */
+    color: #333; /* Dark but soft */
+    line-height: 1.7; /* Breathing room */
+    margin: 15px 0; /* Stack nicely */
+    padding-left: 20px; /* Slight indent for flow */
+    position: relative; /* For bullet flair */
+  }
+  
+  /* Bold Text - Stand Out */
+  .written-contents p strong {
+    color: #2980b9; /* Bright blue pop */
+    font-weight: 600; /* Chunky */
+    transition: color 0.3s ease; /* Smooth shift */
+  }
+  
+  .written-contents p strong:hover {
+    color: #e74c3c; /* Red on hover - Rasta kick */
+  }
+  
+  /* Bullet Points - Custom Style */
+  .written-contents p strong::before {
+    content: '➜'; /* Arrow instead of • */
+    color: #27ae60; /* Green accent */
+    margin-right: 10px; /* Space it */
+    font-size: 1.2rem; /* Slightly bigger */
+  }
+  
+  /* Emphasis - Italics with Flair */
+  .written-contents .em {
+    color: #ffcc00; /* Rasta yellow */
+    font-style: italic;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle glow */
+  }
+  
+  /* Section Fade-In Animation */
+  .written-contents p, .written-contents h6 {
+    opacity: 0; /* Start hidden */
+    animation: fadeInUp 0.6s ease-out forwards; /* Slide up and fade in */
+  }
+  
+  .written-contents h6 {
+    animation-delay: 0.2s; /* Staggered entry */
+  }
+  
+  .written-contents p:nth-child(2n) {
+    animation-delay: 0.4s; /* Offset for p’s */
+  }
+  
+  .written-contents p:nth-child(2n+1) {
+    animation-delay: 0.6s; /* Alternate timing */
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Slide up from below */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Background Accent - Subtle Rasta Stripe */
+  .written-contents::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; /* Thin top bar */
+    background: linear-gradient(90deg, #27ae60, #ffcc00, #e74c3c); /* Green, yellow, red */
+    z-index: 1;
+  }
+  
+  /* Mobile Vibes */
+  @media (max-width: 768px) {
+    .written-contents {
+      padding: 20px; /* Tighter on small screens */
+      margin: 20px; /* Less edge space */
+    }
+    .written-contents h6 {
+      font-size: 1.4rem; /* Slightly smaller */
+    }
+    .written-contents p {
+      font-size: 1rem; /* Readable on mobile */
+      padding-left: 15px; /* Less indent */
+    }
+  }
+
+  @media (max-width: 760px) {
+    
+    
+
+    /* accordion section */
+    .accordion {
+      max-width: 100%; /* Full width on small screens */
+      
+    }
+    .accordion-btn {
+      font-size: 1.2rem; /* Slightly smaller */
+      padding: 15px;
+    }
+    .accordion-content p {
+      font-size: 1rem; /* Readable on mobile */
+    }
+    .accordion-item.active .accordion-content {
+      padding: 15px;
+    }
+  
+  
+  /* Animation for Opening */
+  .accordion-item.active .accordion-btn {
+    color: #27ae60; /* Green when active */
+    background: rgba(39, 174, 96, 0.05); /* Subtle tint */
+  
+    }
+    .fade-container {
+      height: 70px; /* Slimmer on mobile */
+      font-size: 0.9rem;
+    }
+    .fade-title h6 {
+      font-size: 1.2rem;
+    }
+    .fade-in p {
+      font-size: 0.95rem;
+      max-width: 90%;
+    }
+  }
+
+  .p-section p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #3498db;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-cta {
+    background: linear-gradient(135deg, #e2d87d 20%, #bfdbfa 0%); /* Blue gradient, matches #007bff */
+    color: #f8f9fa; /* Light text */
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-cta:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+  }
+  
+  .cta-text {
+    font-size: 1.25rem; /* Slightly larger than body */
+    line-height: 1.6;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .btn-cta {
+    background-color: #f8f9fa !important; /* Light background */
+    color: #343a40 !important; /* Dark text */
+    border: 2px solid #343a40 !important; /* Matches your btn-outline-dark */
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-cta:hover {
+    background-color: #cbcdd1 !important; /* Dark on hover */
+    color: #1a1c1d !important; /* Light text */
+    border-color: #202224 !important;
+    transform: scale(1.05); /* Slight grow effect */
+  }
+  
+  @media (max-width: 768px) {
+    .contact-cta {
+      padding: 2rem 1.5rem;
+    }
+    .cta-text {
+      font-size: 1.1rem;
+    }
+    .btn-cta {
+      padding: 0.5rem 1.5rem;
+      font-size: 1rem;
+    }
+  }

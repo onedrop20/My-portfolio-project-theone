@@ -19,6 +19,7 @@ body, html {
   padding: 0;
   width: 100%;
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  
 }
 
 /* Make sure the container is centered and fits the screen */
@@ -40,6 +41,8 @@ body, html {
   padding-right: 10px;
 }
 
+
+
 /* Fix alignment on smaller screens */
 @media (max-width: 768px) {
   .container {
@@ -60,7 +63,8 @@ body, html {
 
 /* Make sure content does not overflow */
 body {
-  overflow-x: hidden;
+  height: auto;
+  overflow-y: auto;
 }
 
 /* Adjust container width */
@@ -92,5 +96,23 @@ body {
   .col {
     width: 100%; /* Make columns take full width */
     margin-bottom: 20px;
+  }
+
+}
+
+@media (max-width: 520px) {
+  .container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  html, body {
+    width: 100%;
+    height: auto !important;
+    overflow-x: hidden !important; 
+    overflow-y: auto !important;
+    touch-action: auto !important;
+    position: relative;
+    font-family: 'Arial', sans-serif;
   }
 }

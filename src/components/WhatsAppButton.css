@@ -1,0 +1,68 @@
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px; /* Stick it low on the page */
+  right: 20px;  /* Hug the right edge */
+  width: 60px;  /* Nice chunky size */
+  height: 60px;
+  background: #25D366; /* WhatsApp green */
+  border-radius: 50%; /* Full circle vibe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Deep shadow for depth */
+  z-index: 100000; /* Stays on top of everything */
+  transition: all 0.3s ease-in-out; /* Smooth moves */
+  text-decoration: none; /* No underline */
+}
+
+/* Icon styling */
+.whatsapp-button i {
+  font-size: 36px; /* Big, bold icon */
+  color: #fff; /* White on green */
+  transition: transform 0.3s ease-in-out; /* Bounce-ready */
+}
+
+/* Hover effect */
+.whatsapp-button:hover {
+  background: #20b354; /* Darker green on hover */
+  transform: scale(1.1); /* Slight pop */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Bigger shadow */
+}
+
+/* Icon bounce on hover */
+.whatsapp-button:hover i {
+  transform: scale(1.2); /* Icon pops too */
+}
+
+/* Pulse animation to grab attention */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-button {
+  animation: pulse 2s infinite; /* Pulse every 2s */
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  .whatsapp-button {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+  .whatsapp-button i {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,271 @@
+.blog-page {
+  background: #f8f9fa;
+  min-height: 100vh;
+  margin-top: 160px;
+}
+
+.blog-header {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  overflow: none;
+  background: transparent;
+  z-index: 10000;
+  top: -20px;
+
+}
+
+.cover-photo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  bottom: 50px;
+  z-index: none;
+}
+
+.profile-info {
+  position: absolute;
+  bottom: -130px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 20px 0px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px;
+  top: 135px;
+  
+
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #007bff;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  background: white;
+}
+
+.profile-info h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #343a40;
+  margin: 0.5rem 0;
+}
+
+.bio {
+  font-size: 1rem;
+  color: #495057;
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  font-size: 0.9rem;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0056b3;
+}
+
+.blog-container {
+  max-width: 900px;
+  margin: 6rem auto;
+  padding: 2rem 1rem;
+}
+
+.blog-post {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: calc(0.2s * var(--post-index));
+}
+
+.post-author {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.post-profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  object-fit: cover;
+}
+
+.author-name {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #343a40;
+  margin-top: 0.5rem;
+}
+
+.post-content {
+  flex: 1;
+}
+
+.blog-post h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.3rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.blog-post h2:hover {
+  color: #007bff;
+  transform: translateX(5px);
+}
+
+.blog-post .post-date {
+  font-size: 0.9rem;
+  color: #495057;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.blog-post p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #343a40;
+  margin-bottom: 1rem;
+}
+
+.blog-cta {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.blog-cta .btn {
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border-color: #343a40;
+  color: #343a40;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.blog-cta .btn:hover {
+  background: #343a40;
+  color: #f8f9fa;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-header {
+    max-height: 300px;
+  }
+
+  .cover-photo {
+    height: 200px;
+  }
+
+  .profile-info {
+    bottom: -120px;
+    width: 95%;
+    padding: 0.75rem;
+    top: 80px;
+  }
+
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .bio {
+    font-size: 0.9rem;
+  }
+
+  .social-links a {
+    font-size: 0.8rem;
+  }
+
+  .blog-container {
+    margin: 5rem auto;
+    padding: 1rem 0.5rem;
+  }
+
+  .blog-post {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .post-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .post-profile-pic {
+    width: 40px;
+    height: 40px;
+  }
+
+  .author-name {
+    font-size: 0.8rem;
+    margin-top: 0;
+  }
+
+  .blog-post h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-post .post-date {
+    font-size: 0.8rem;
+  }
+
+  .blog-post p {
+    font-size: 0.95rem;
+  }
+
+  .blog-cta .btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 602px) {
+  .profile-info {
+    bottom: -120px;
+    
+    
+  }
+}

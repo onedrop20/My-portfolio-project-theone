@@ -1,38 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
-import Logo from "../assets/images/onedroplogo.PNG"; // Adjust the path if necessary
+import Logo from "../assets/images/onedroplogo.PNG"; // Adjust path if needed
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation(); // Get the current path
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  // Shrink on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav>
+    <nav className={isScrolled ? "scrolled" : ""}>
       <img src={Logo} alt="One Drop Logo" className="logo" />
 
-      {/* Open (Hamburger) Icon */}
+      {/* Hamburger Icon */}
       {!menuOpen && (
         <i className="fa-solid fa-bars" onClick={() => setMenuOpen(true)}></i>
       )}
 
+      {/* Overlay for click-outside-to-close and darkening */}
+      {menuOpen && <div className="overlay" onClick={() => setMenuOpen(false)}></div>}
+
       {/* Side Menu */}
       <ul className={`sidemenu ${menuOpen ? "open" : ""}`}>
-        {/* Close (X) Icon */}
+        {/* Close Icon */}
         <i className="fa-solid fa-xmark" onClick={() => setMenuOpen(false)}></i>
 
         <li>
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className={location.pathname === "/" ? "active" : ""}
             onClick={() => setMenuOpen(false)}
           >
-            <i className="fa-solid fa-house"></i>
+            <i className="fa-solid fa-house"></i> Home
           </Link>
         </li>
         <li>
-          <Link 
-            to="/about" 
+          <Link
+            to="/about"
             className={location.pathname === "/about" ? "active" : ""}
             onClick={() => setMenuOpen(false)}
           >
@@ -40,8 +53,8 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link 
-            to="/services" 
+          <Link
+            to="/services"
             className={location.pathname === "/services" ? "active" : ""}
             onClick={() => setMenuOpen(false)}
           >
@@ -49,8 +62,8 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link 
-            to="/projects" 
+          <Link
+            to="/projects"
             className={location.pathname === "/projects" ? "active" : ""}
             onClick={() => setMenuOpen(false)}
           >
@@ -58,8 +71,17 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link 
-            to="/contact" 
+          <Link
+            to="/blog"
+            className={location.pathname === "/blog" ? "active" : ""}
+            onClick={() => setMenuOpen(false)}
+          >
+            Blog
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/contact"
             className={location.pathname === "/contact" ? "active" : ""}
             onClick={() => setMenuOpen(false)}
           >
