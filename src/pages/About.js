@@ -65,7 +65,7 @@ function About() {
       </p>
     </section>
 
-    <section>
+    <section className="about-section">
       <h3>Commitment to Quality</h3>
       <p>
         At my core, I believe that quality is not just an expectation but a standard that should never be compromised.
@@ -76,7 +76,7 @@ function About() {
       </p>
     </section>
 
-    <section>
+    <section className="about-section">
       <h3>How I Stay Ahead</h3>
       <p>
         In the ever-evolving digital landscape, staying ahead means constantly learning and adapting. Technology is always changing, and what works today may become obsolete tomorrow. 
@@ -86,7 +86,7 @@ function About() {
       </p>
     </section>
 
-    <section>
+    <section className="about-section">
       <h3>Client-Centered Approach</h3>
       <p>
         One of the things that sets me apart is my commitment to my clients. I don’t just build solutions—I build relationships. 
@@ -97,7 +97,7 @@ function About() {
       </p>
     </section>
 
-    <section>
+    <section className="about-section">
       <h3>The Power of Innovation</h3>
       <p>
         Innovation drives everything I do. I am not satisfied with just following industry standards—I strive to redefine them. 
@@ -107,7 +107,7 @@ function About() {
       </p>
     </section>
 
-    <section>
+    <section className="about-section">
       <h3>Sustainable and Ethical Practices</h3>
       <p>
         As an independent developer, I am mindful of the impact my work has on society and the environment. 
@@ -117,7 +117,7 @@ function About() {
       </p>
     </section>
 
-    <section>
+    <section className="about-section">
       <h3>Expanding My Horizons</h3>
       <p>
         I am constantly looking for new ways to expand my expertise and explore different industries. 
@@ -126,7 +126,7 @@ function About() {
       </p>
     </section>
 
-    <section>
+    <section className="about-section">
       <h3>Conclusion</h3>
       <p>
         At the heart of everything I do is a passion for innovation, quality, and meaningful connections. 
@@ -154,7 +154,7 @@ function About() {
       </footer>
     </div>
   
-      <Link to="/" className="btn btn-dark">Back to Home</Link>
+      <Link to="/" className="btn-secondary">Back to Home</Link>
     </div>
   );
 }

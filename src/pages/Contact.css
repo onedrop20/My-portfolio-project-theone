@@ -16,7 +16,11 @@
 }
 
 
-
+.contact-coverall {
+  background: black;
+  height: 100%;
+  bottom: 600px;
+}
 /* src/Contact.css */
 .contact-main {
   width: 100%;
@@ -25,7 +29,8 @@
   background: black;
   position: relative; /* Contain children */
   overflow: hidden; /* Prevent overflow weirdness */
-  
+  top: 5rem;
+  border-radius: 0;
   
 }
 
@@ -130,14 +135,14 @@ form .btn3.btn4:active {
   height: 50%;
   text-align: center;
   padding: 1px 0;
-  background: #262626;
+  background: none;
   font-weight: 300;
   margin-top: 30px;
   color: #dfdfdf;
   font-size: 10px;
 }
 
-.btn.btn-secondary.mt-3 {
+.btn-secondary {
   padding: 10px 20px;
   background: #555;
   color: #fff;
@@ -145,6 +150,10 @@ form .btn3.btn4:active {
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  pointer-events: auto;
 }
 
 .btn.btn-secondary.mt-3:hover {
@@ -298,6 +307,7 @@ a.contact-item:hover {
     margin-top: 6rem;
     padding: 20px;
     max-width: 90%;
+    left: 1.7rem;
   }
   form input,
   form textarea {
@@ -319,6 +329,7 @@ a.contact-item:hover {
   }
   .socials-links {
     gap: 15px;
+    
   }
   a.socials-icons {
     padding: 8px 15px;
@@ -335,15 +346,21 @@ a.contact-item:hover {
     max-width: 350px;
     min-height: 36px;
   }
-  .copyright {
-    font-size: 10px;
+  .copyright p {
+    font-size: 0.8rem !important;
     padding: 1px;
   }
 }
 
 @media (max-width: 480px) {
+  .copyright p {
+    font-size: 0.6rem !important;
+    
+  }
+}
+@media (max-width: 480px) {
   .contact-right {
-    margin-top: 3rem;
+    margin-top: 6rem;
     padding: 15px;
   }
   form input,
@@ -355,7 +372,7 @@ a.contact-item:hover {
     font-size: 14px;
   }
   .socials-links {
-    flex-direction: column;
+    
     gap: 12px;
   }
   a.socials-icons {

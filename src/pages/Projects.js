@@ -255,8 +255,8 @@ const Projects = () => {
 
       {/* Title */}
       <div className="container mb-3 d-flex justify-content-center">
-        <h3 className="heading-shadow fs-2 mb-5">
-          <b>My Latest Projects</b>
+        <h3 className="heading-shadow ">
+        <b>My Latest Projects</b>
         </h3>
       </div>
 
@@ -340,7 +340,8 @@ const Projects = () => {
       </div>
 
       {/* Filter Buttons */}
-      <div className="filters col mb-5 text-center">
+      <section className="filters-section">
+      <div className="filters  text-center">
         <span
           onClick={() => setFilterKey("*")}
           className={filterKey === "*" ? "fw-bold" : ""}
@@ -366,6 +367,7 @@ const Projects = () => {
           UI Design
         </span>
       </div>
+      </section>
 
       {/* Projects Grid */}
       <div className="grid">
@@ -377,6 +379,9 @@ const Projects = () => {
       {/* Back Button */}
       
     </div>
+    <button onClick={() => window.history.back()} className=" btn-secondary">
+        ← Back
+      </button>
     </div>
   );
 };

@@ -14,6 +14,7 @@
   padding: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   transition: box-shadow 0.3s ease-in-out;
+  z-index: 1000;
 }
 
 /* Wrapper for sliding effect */
@@ -139,6 +140,22 @@
 
   .next-btn {
     right: 5px;
+  }
+}
+
+@media (max-width: 520px) {
+  .review-carousel {
+    width: 110vw;
+    height: 80vw;
+    padding: 20px 0;
+  }
+
+  .review-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .review-card p {
+    font-size: 0.9rem !important;
   }
 }
 

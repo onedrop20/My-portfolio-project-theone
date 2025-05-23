@@ -169,6 +169,8 @@
   border-color: #343a40;
   color: #343a40;
   transition: background 0.3s ease, color 0.3s ease;
+  position: relative;
+  z-index: 10;
 }
 
 .blog-cta .btn:hover {
@@ -267,5 +269,17 @@
     bottom: -120px;
     
     
+  }
+}
+
+@media (max-width: 520px) {
+  .blog-post p {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 426px) {
+  .profile-info {
+    top: 50px;
   }
 }

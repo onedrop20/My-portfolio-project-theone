@@ -38,6 +38,7 @@ const Contact = () => {
   
 
   return (
+    <div className="contact-coverall"> 
     <main className="contact-main" style={{ fontFamily: "'Trebuchet MS', sans-serif", padding: "20px" }}>
       <BackButton />
 
@@ -81,7 +82,7 @@ const Contact = () => {
       <div className="contacts">
         <div className="contact-info phones">
           <a href="tel:+12348154219951" className="contact-item phone" onClick={() => console.log("Phone clicked")}>
-            <span><i className="fas fa-phone"></i> +1 (234) 815-421-9951</span>
+            <span><i className="fas fa-phone"></i> +234 8154219951</span>
           </a>
         </div>
         <div className="contact-info emails">
@@ -95,10 +96,11 @@ const Contact = () => {
         <p>Copyright © 2025 Victory Esemekivwaro. All rights reserved.</p>
       </div>
 
-      <button onClick={() => window.history.back()} className="btn btn-secondary mt-3">
+      <button onClick={() => window.history.back()} className=" btn-secondary mt-3">
         ← Back
       </button>
     </main>
+    </div>
   );
 };
 

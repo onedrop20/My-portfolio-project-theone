@@ -62,7 +62,7 @@
     align-items: center;
     justify-content: center;
     color: #fff; /* White text */
-    z-index: 900; /* Stays above most */
+    z-index: 1001; /* Stays above most */
     overflow: hidden; /* Clean edges */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle depth */
   }
@@ -214,6 +214,7 @@
     justify-content: space-between; /* Space for arrow */
     align-items: center;
     transition: color 0.3s ease, background 0.3s ease;
+    z-index: 1000;
   }
   
   /* Arrow Icon */
@@ -311,6 +312,7 @@
     font-family: 'Arial', sans-serif; /* Clean font */
     position: relative; /* For some flair */
     overflow: hidden; /* Clean edges */
+    z-index: 900;
   }
   
   /* Headings - Bold and Punchy */
@@ -493,6 +495,7 @@
     padding: 3rem 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    z-index: 1000;
   }
   
   .contact-cta:hover {
@@ -535,4 +538,46 @@
       padding: 0.5rem 1.5rem;
       font-size: 1rem;
     }
+  }
+
+  @media (max-width: 520px) {
+    .accordion-content p {
+      font-size: 1rem !important; 
+    }
+
+    .accordion-btn {
+      font-size: 1rem !important;
+    }
+
+    .written-contents h6 {
+      font-size: 1.1rem;
+    }
+
+    .written-contents p {
+      font-size: 0.7rem !important;
+    }
+    
+    .written-contents {
+      max-width: 1000px !important;
+    }
+
+    .p-section p {
+      font-size: 0.9rem !important;
+    }
+
+    .fade-title h6 {
+      font-size: 0.8rem;
+    }
+
+    .fade-in p {
+      font-size: 0.8rem !important;
+    }
+  }
+
+  @media (max-width: 496px) {
+    .accordion-content p {
+      font-size: 0.9rem !important; 
+      max-width: 1000px !important;
+    }
+
   }

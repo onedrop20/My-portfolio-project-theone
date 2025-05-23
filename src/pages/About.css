@@ -35,7 +35,7 @@ body {
     margin-bottom: 30px;
   }
   
-  .about-section h2 {
+  .about-section h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
     color: #333;
@@ -53,4 +53,22 @@ body {
   
   .about-section ul li {
     margin-bottom: 5px;
+  }
+
+  @media (max-width: 520px) {
+    .about-title {
+      font-size: 1.5rem !important;
+    }
+    .about-intro {
+      font-size: 0.8rem !important;
+    }
+
+    .about-section h3 {
+      font-size: 1.3rem !important;
+    }
+
+    .about-section p,
+  .about-section ul {
+    font-size: 0.8rem !important;
+  }
   }

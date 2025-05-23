@@ -487,7 +487,7 @@ const Home = () => {
         </div>
       </>
 
-      <section>
+      <section className="last-end">
         <p style={{ marginLeft: "10px" }}>
           I'm dedicated to delivering high-quality services tailored to your
           needs. Whether you’re looking for web development, social media
